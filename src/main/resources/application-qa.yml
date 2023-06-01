@@ -1,0 +1,8 @@
+db.pools:
+  - size: 10
+    timeout: 10
+  - size: 20
+    timeout: 20
+  - size: 30
+    timeout: 30
+

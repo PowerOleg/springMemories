@@ -1,0 +1,5 @@
+2023-06-01 12:53:24.835  INFO 5836 --- [main] com.example.spring2.ConnectionPool       : Init connection pool 
+2023-06-01 12:53:24.859  WARN 5836 --- [main] c.e.s.repository.CompanyRepository       : Init of company repository
+2023-06-01 17:33:18.992  INFO 2372 --- [Test worker] com.example.spring2.ConnectionPool       : Init connection pool 
+2023-06-01 17:33:19.054  WARN 2372 --- [Test worker] c.e.s.repository.CompanyRepository       : Init of company repository
+2023-06-01 17:33:24.190  INFO 2372 --- [SpringApplicationShutdownHook] com.example.spring2.ConnectionPool       : Clean connection pool
