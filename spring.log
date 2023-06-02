@@ -1,5 +1,16 @@
-2023-06-01 12:53:24.835  INFO 5836 --- [main] com.example.spring2.ConnectionPool       : Init connection pool 
-2023-06-01 12:53:24.859  WARN 5836 --- [main] c.e.s.repository.CompanyRepository       : Init of company repository
-2023-06-01 17:33:18.992  INFO 2372 --- [Test worker] com.example.spring2.ConnectionPool       : Init connection pool 
-2023-06-01 17:33:19.054  WARN 2372 --- [Test worker] c.e.s.repository.CompanyRepository       : Init of company repository
-2023-06-01 17:33:24.190  INFO 2372 --- [SpringApplicationShutdownHook] com.example.spring2.ConnectionPool       : Clean connection pool
+2023-06-02 20:23:15.629  INFO 6764 --- [Test worker] com.example.spring2.ConnectionPool       : Init connection pool 
+2023-06-02 20:23:15.792  WARN 6764 --- [Test worker] c.e.s.repository.CompanyRepository       : Init of company repository
+2023-06-02 20:23:22.757  INFO 6764 --- [Test worker] com.example.spring2.ConnectionPool       : Init connection pool 
+2023-06-02 20:23:22.781  WARN 6764 --- [Test worker] c.e.s.repository.CompanyRepository       : Init of company repository
+2023-06-02 20:23:25.098  INFO 6764 --- [SpringApplicationShutdownHook] com.example.spring2.ConnectionPool       : Clean connection pool
+2023-06-02 20:23:25.106  INFO 6764 --- [SpringApplicationShutdownHook] com.example.spring2.ConnectionPool       : Clean connection pool
+2023-06-02 20:24:12.861  INFO 5468 --- [Test worker] com.example.spring2.ConnectionPool       : Init connection pool 
+2023-06-02 20:24:12.902  WARN 5468 --- [Test worker] c.e.s.repository.CompanyRepository       : Init of company repository
+2023-06-02 20:24:16.337  INFO 5468 --- [SpringApplicationShutdownHook] com.example.spring2.ConnectionPool       : Clean connection pool
+2023-06-02 20:25:11.286  INFO 8244 --- [Test worker] com.example.spring2.ConnectionPool       : Init connection pool 
+2023-06-02 20:25:11.327  WARN 8244 --- [Test worker] c.e.s.repository.CompanyRepository       : Init of company repository
+2023-06-02 20:25:15.239  INFO 8244 --- [SpringApplicationShutdownHook] com.example.spring2.ConnectionPool       : Clean connection pool
+2023-06-02 20:27:01.016  INFO 11120 --- [Test worker] com.example.spring2.ConnectionPool       : Init connection pool 
+2023-06-02 20:27:01.049  WARN 11120 --- [Test worker] c.e.s.repository.CompanyRepository       : Init of company repository
+2023-06-02 20:33:09.393  INFO 8356 --- [Test worker] com.example.spring2.ConnectionPool       : Init connection pool 
+2023-06-02 20:33:09.433  WARN 8356 --- [Test worker] c.e.s.repository.CompanyRepository       : Init of company repository
