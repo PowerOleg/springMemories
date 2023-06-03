@@ -8,9 +8,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.SpyBean;
+import org.springframework.test.annotation.DirtiesContext;
 
 @IT
 @RequiredArgsConstructor
+//@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class UserServiceIT {
 
     private final UserService userService;
@@ -18,6 +20,11 @@ public class UserServiceIT {
 
     @Test
     void test() {
+        System.out.println();
+    }
+
+    @Test
+    void test2() {
         System.out.println();
     }
 }

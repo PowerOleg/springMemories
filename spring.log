@@ -3,3 +3,6 @@
 2023-06-03 11:53:07.619  INFO 7644 --- [Test worker] com.example.spring2.ConnectionPool       : Init connection pool 
 2023-06-03 11:53:08.733  WARN 7644 --- [Test worker] c.e.s.repository.CompanyRepository       : Init of company repository
 2023-06-03 11:53:11.571  INFO 7644 --- [SpringApplicationShutdownHook] com.example.spring2.ConnectionPool       : Clean connection pool
+2023-06-03 12:13:07.621  INFO 7824 --- [Test worker] com.example.spring2.ConnectionPool       : Init connection pool 
+2023-06-03 12:13:08.851  WARN 7824 --- [Test worker] c.e.s.repository.CompanyRepository       : Init of company repository
+2023-06-03 12:13:11.049  INFO 7824 --- [SpringApplicationShutdownHook] com.example.spring2.ConnectionPool       : Clean connection pool
