@@ -6,3 +6,14 @@ db.pools:
   - size: 30
     timeout: 30
 
+#This is to create a tables AND fill tables
+#spring:
+#  jpa:
+#    defer-datasource-initialization: true                          #to fill tables
+#    hibernate:
+#      ddl-auto: update
+#  sql:
+#    init:
+#      mode: always                                                 #to fill tables
+#      data-locations: classpath:sql/data                           #to fill tables
+#      schema-locations: classpath:sql/init.sql

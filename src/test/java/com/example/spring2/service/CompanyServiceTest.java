@@ -1,7 +1,6 @@
 package com.example.spring2.service;
 
-import com.example.spring2.Person;
-import com.example.spring2.database.Company;
+import com.example.spring2.database.entity.Company;
 import com.example.spring2.eventListener.EntityEvent;
 import com.example.spring2.repository.CrudRepository;
 import org.junit.jupiter.api.Assertions;
@@ -14,6 +13,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.context.ApplicationEventPublisher;
 
+import java.util.Collections;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -33,10 +33,10 @@ class CompanyServiceTest {
 
     @Test
     void findById() {
-        Mockito.when(companyRepository.findById(COMPANY_ID)).thenReturn(Optional.of(new Company(COMPANY_ID)));
+        Mockito.when(companyRepository.findById(COMPANY_ID)).thenReturn(Optional.of(new Company(COMPANY_ID, null, Collections.emptyMap())));
         final var result = companyService.findById(COMPANY_ID);
         Assertions.assertTrue(result.isPresent());
-        final var expected = new Company(COMPANY_ID);
+        final var expected = new Company(COMPANY_ID, null, Collections.emptyMap());
 
         result.ifPresent(actual -> assertEquals(expected, actual));
 //        Assertions.assertEquals();
