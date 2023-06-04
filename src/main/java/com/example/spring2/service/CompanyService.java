@@ -3,7 +3,7 @@ package com.example.spring2.service;
 import com.example.spring2.database.entity.Company;
 import com.example.spring2.eventListener.AccessType;
 import com.example.spring2.eventListener.EntityEvent;
-import com.example.spring2.repository.CrudRepository;
+import com.example.spring2.database.repository.CrudRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
