@@ -7,12 +7,14 @@ import com.example.spring2.database.repository.CrudRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class CompanyService {
     private final CrudRepository<Integer, Company> companyRepository;
     private final UserService userService;
