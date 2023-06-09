@@ -5,12 +5,14 @@ import com.example.spring2.database.repository.CrudRepository;
 //import com.example.spring2.repository.UserRepository;
 import com.example.spring2.database.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 public class UserService {
     private final UserRepository userRepository;                        //найдет по имени
-    private final CrudRepository<Integer, Company> companyRepository;       //найдет по имени
+    @Qualifier("companyRepositoryAuto")
+    private final CrudRepository<Company, Integer> companyRepository;       //найдет по имени, потом пойдет в Qualifier
 
 }

@@ -15,7 +15,7 @@ import java.util.Optional;
 @Slf4j
 @Repository
 @RequiredArgsConstructor
-public class CompanyRepository implements CrudRepository<Integer, Company> {
+public class CompanyRepository implements CrudRepository<Company, Integer> {
     private final ConnectionPool connectionPool;//pool1;
 //может добавить @Value? тут инициализация через конструктор - все хорошо
     private final List<ConnectionPool> pools;
