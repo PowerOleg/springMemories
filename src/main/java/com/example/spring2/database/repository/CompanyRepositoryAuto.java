@@ -17,4 +17,6 @@ public interface CompanyRepositoryAuto extends CrudRepository<Company, Integer>,
 
 //    Optional<Company> findById(Integer id);
 
+    void delete(Company entity);
+
 }

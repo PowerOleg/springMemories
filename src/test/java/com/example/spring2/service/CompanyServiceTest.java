@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CompanyServiceTest {
     public static final Integer COMPANY_ID = 1;
     @Mock
-    private CrudRepository<Integer, Company> companyRepository;
+    private CrudRepository<Company, Integer> companyRepository;
     @Mock
     private UserService userService;
     @Mock
