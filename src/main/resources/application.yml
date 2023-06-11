@@ -17,7 +17,6 @@ db:
   - size: 2
     timeout: 2
 
-spring.profiles.active: qa
 logging:
   level:
     root: INFO
@@ -27,12 +26,15 @@ logging:
     path: /
 spring:
   datasource:
-    url: jdbc:postgresql://192.168.99.100:5433/postgres
+#    url: jdbc:postgresql://192.168.99.100:5433/postgres
+    url: jdbc:postgresql://127.0.0.1:5433/db1
     username: postgres
-    password: pass
+    password: sadnasKFABFKAWFBAjk6135KBAFKAJB FAKLWJFN11354fafsefdxf3dx51351531fdxfdx1fdxf351531KUBJVJVBADKWDBAKDB
     driver-class-name: org.postgresql.Driver
   jpa:
     properties.hibernate:
       show_sql: true
       format_sql: true
       hbm2ddl.auto: validate
+
+spring.profiles.active: qa

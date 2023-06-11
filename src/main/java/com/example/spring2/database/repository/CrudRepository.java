@@ -1,7 +1,9 @@
 package com.example.spring2.database.repository;
 
-import java.util.Optional;
+import com.example.spring2.database.entity.Company;
 
-public interface CrudRepository<Company, Integer>{
-   Optional<Company> findById(Integer id);
+import java.util.Optional;
+//устарел;
+public interface CrudRepository<Company, Integer> {
+    Optional<com.example.spring2.database.entity.Company> findById(java.lang.Integer id);
 }

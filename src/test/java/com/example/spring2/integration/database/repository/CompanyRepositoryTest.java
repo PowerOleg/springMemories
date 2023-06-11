@@ -28,6 +28,14 @@ class CompanyRepositoryTest {
 
 
     @Test
+    void test_check_by_queries() {
+        companyRepository.findByName("google");
+        companyRepository.findDistinctByNameContainingIgnoreCase("a");
+        companyRepository.findByUsername("Ivan");
+        companyRepository.findByCompanyName("google");
+    }
+
+    @Test
     void test_delete() {
         final var companyToDelete = companyRepository.findById(ID_DELETE);
         Assertions.assertTrue(companyToDelete.isPresent());

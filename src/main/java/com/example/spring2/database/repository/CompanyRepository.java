@@ -12,6 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+//устарел;класс для проверки управления логгера из пропертей, чтоб показывались только WARN но пока стоит настройка на показ INFO
 @Slf4j
 @Repository
 @RequiredArgsConstructor

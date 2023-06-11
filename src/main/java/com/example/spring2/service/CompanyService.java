@@ -1,6 +1,7 @@
 package com.example.spring2.service;
 
 import com.example.spring2.database.entity.Company;
+import com.example.spring2.database.repository.CompanyRepositoryAuto;
 import com.example.spring2.eventListener.AccessType;
 import com.example.spring2.eventListener.EntityEvent;
 import com.example.spring2.database.repository.CrudRepository;
@@ -17,8 +18,8 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Transactional
 public class CompanyService {
-    @Qualifier("companyRepositoryAuto")
-    private final CrudRepository<Company, Integer> companyRepository;
+
+    private final CompanyRepositoryAuto companyRepository;
     private final UserService userService;
     private final ApplicationEventPublisher eventPublisher;             //!!!Добавляет способность Listener'а который мы в Listener прописали
 

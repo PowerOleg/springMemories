@@ -16,6 +16,7 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@NamedQuery(name = "Company.findByName", query="select c from Company c where lower(c.name) = lower(:name)")
 public class Company implements BaseEntity<Integer> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
