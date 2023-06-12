@@ -15,6 +15,7 @@ import java.util.List;
 @Builder
 @ToString(exclude = "userChats")
 @EqualsAndHashCode (of = "username")
+//@NamedEntityGraph(name = "User.company", attributeNodes = @NamedAttributeNode("company")) //это нужно для UserRepository @EntityGraph(value)
 public class User implements BaseEntity<Long> {
 
     @Id

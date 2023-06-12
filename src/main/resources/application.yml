@@ -26,10 +26,11 @@ logging:
     path: /
 spring:
   datasource:
-#    url: jdbc:postgresql://192.168.99.100:5433/postgres
-    url: jdbc:postgresql://127.0.0.1:5433/db1
+    url: jdbc:postgresql://192.168.99.100:5433/postgres
+#    url: jdbc:postgresql://127.0.0.1:5433/db1
     username: postgres
-    password: sadnasKFABFKAWFBAjk6135KBAFKAJB FAKLWJFN11354fafsefdxf3dx51351531fdxfdx1fdxf351531KUBJVJVBADKWDBAKDB
+    password: pass
+#    password: nasKFABFKAWFBAjk6135KBAFKAJB FAKLWJFN11354fafsefdxf3dx51351531fdxfdx1fdxf351531KUBJVJVBADKWDBAKDB
     driver-class-name: org.postgresql.Driver
   jpa:
     properties.hibernate:

@@ -7,6 +7,7 @@ import com.example.spring2.integration.annotation.IT;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.Sort;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +23,49 @@ class UserRepositoryTest {
 
     private final UserRepository userRepository;
 
+    //сортировка как профи используя Page
+    @Test
+    public void PeageableSortPageTest() {
+        final var pageable = PageRequest.of(1, 2, Sort.by("id"));
+        var page = userRepository.findBy(pageable);                                          //суть тут
+        page.forEach(n -> System.out.println(n.getCompany().getName()));
+        assertThat(page).hasSize(2);
+
+        while (page.hasNext()) {
+            page = userRepository.findBy(page.nextPageable());
+            page.forEach(n -> System.out.println(n.getCompany().getName()));
+        }
+    }
+
+    //сортировка как профи используя Slice
+    @Test
+    public void PeageableSortSliceTest() {
+        final var pageable = PageRequest.of(1, 2, Sort.by("id"));
+        var slice = userRepository.findAllBy(pageable);                                             //суть тут
+        slice.forEach(n -> System.out.println(n.getId()));
+        assertThat(slice).hasSize(2);
+
+        while (slice.hasNext()) {
+            slice = userRepository.findAllBy(slice.nextPageable());
+            slice.forEach(n -> System.out.println(n.getId()));
+        }
+
+    }
+
+    //сортировка не как профи
+    @Test
+    public void checkFirstTop() {
+        //сортировка удобным способом
+        final var sortBy = Sort.sort(User.class);
+        final var sort = sortBy.by(User::getFirstname).and(sortBy.by(User::getLastname));
+        final var userList = userRepository.findTop3ByBirthDateBefore(LocalDate.now(), sort);
+        System.out.println(userList);
+
+//        //неудобным способом сортировка потому что имя метода длинное
+//        final var users = userRepository.findTop3ByBirthDateBeforeOrderByBirthDateDesc(LocalDate.now());    //Top3 это первые 3 User
+//        assertThat(users).hasSize(3);
+    }
+
     @Test
     public void checkQueries() {
         final var users = userRepository.findAllBy("a", "ov");
@@ -34,24 +78,7 @@ class UserRepositoryTest {
         System.out.println(result);
     }
 
-    //сортировка как профи
-    @Test
-    public void PeageableSort() {
-        final var pageable = PageRequest.of(1, 2, Sort.by("id"));
-        final var result = userRepository.findAllBy(pageable);
-        assertThat(result).hasSize(2);
-    }
 
-//сортировка
-    @Test
-    public void checkFirstTop() {
-        //сортировка удобным способом
-        final var sortBy = Sort.sort(User.class);
-        final var sort = sortBy.by(User::getFirstname).and(sortBy.by(User::getLastname));
-        final var userList = userRepository.findTop3ByBirthDateBefore(LocalDate.now(), sort);
 
-        //неудобным способом сортировка потому что имя метода длинное
-        final var users = userRepository.findTop3ByBirthDateBeforeOrderByBirthDateDesc(LocalDate.now());    //Top3 это первые 3 User
-        assertThat(users).hasSize(3);
-    }
+
 }
