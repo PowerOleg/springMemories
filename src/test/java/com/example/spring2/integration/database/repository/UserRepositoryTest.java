@@ -4,6 +4,7 @@ import com.example.spring2.database.entity.Role;
 import com.example.spring2.database.entity.User;
 import com.example.spring2.database.repository.UserRepository;
 import com.example.spring2.dto.PersonalInfo;
+import com.example.spring2.dto.UserFilter;
 import com.example.spring2.integration.annotation.IT;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
@@ -26,7 +27,7 @@ class UserRepositoryTest {
 
     //test Projection
     @Test
-    public void test_projection() {
+    public void testProjection() {
         var users = userRepository.findAllByCompanyId(1);
         System.out.println(users);
 //        final var personalInfoList = userRepository.findByFirstname("Petr", PersonalInfo.class);
@@ -90,7 +91,12 @@ class UserRepositoryTest {
         System.out.println(result);
     }
 
-
+    @Test
+    public void checkCustomImplementation() {
+        UserFilter filter = UserFilter.builder().lastname("%ov%").birthDate(LocalDate.now()).build();
+        final var users = userRepository.findAllByFilter(filter);
+        System.out.println(users);
+    }
 
 
 }

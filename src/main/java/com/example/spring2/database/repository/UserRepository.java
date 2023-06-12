@@ -22,7 +22,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 //@Repository                   //можно убрать т.к. мы extends от Repository И значит нас видят
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Long>, FilterUserRepository {
     //test Projection используем интерфейсы как профи
     @Query(value = "SELECT firstname, birth_date birthDate FROM users WHERE company_id = :companyId   ", nativeQuery = true)
     List<InterfacePersonalInfo> findAllByCompanyId(Integer companyId);
