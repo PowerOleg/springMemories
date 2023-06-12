@@ -3,6 +3,7 @@ package com.example.spring2.integration.database.repository;
 import com.example.spring2.database.entity.Role;
 import com.example.spring2.database.entity.User;
 import com.example.spring2.database.repository.UserRepository;
+import com.example.spring2.dto.PersonalInfo;
 import com.example.spring2.integration.annotation.IT;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,17 @@ import static org.junit.jupiter.api.Assertions.*;
 class UserRepositoryTest {
 
     private final UserRepository userRepository;
+
+    //test Projection
+    @Test
+    public void test_projection() {
+        var users = userRepository.findAllByCompanyId(1);
+        System.out.println(users);
+//        final var personalInfoList = userRepository.findByFirstname("Petr", PersonalInfo.class);
+//        System.out.println(personalInfoList);
+    }
+
+
 
     //сортировка как профи используя Page
     @Test

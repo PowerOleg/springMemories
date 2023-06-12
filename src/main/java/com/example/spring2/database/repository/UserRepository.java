@@ -4,6 +4,8 @@ import com.example.spring2.ConnectionPool;
 import com.example.spring2.database.entity.Company;
 import com.example.spring2.database.entity.Role;
 import com.example.spring2.database.entity.User;
+import com.example.spring2.dto.InterfacePersonalInfo;
+import com.example.spring2.dto.PersonalInfo;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -21,6 +23,20 @@ import java.util.List;
 
 //@Repository                   //можно убрать т.к. мы extends от Repository И значит нас видят
 public interface UserRepository extends JpaRepository<User, Long> {
+    //test Projection используем интерфейсы как профи
+    @Query(value = "SELECT firstname, birth_date birthDate FROM users WHERE company_id = :companyId   ", nativeQuery = true)
+    List<InterfacePersonalInfo> findAllByCompanyId(Integer companyId);
+
+    //test Projection используя класс
+//    List<PersonalInfo> findAllByCompanyId(Integer companyId);
+
+    //test Projection
+    <T> List<T> findByFirstname(String firstname, Class<T> clazz);
+
+
+
+
+
     //удобная сортировка используя Pageable  возвращая Page с учетом общего числа страничек
 //    @Query(value = "select u from User u", countQuery = "select count(distinct u.firstname) from User u") //можно изменить подсчет общего числа
     //страничек используя countQuery
